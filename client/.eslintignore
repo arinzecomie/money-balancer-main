@@ -1,0 +1,6 @@
+**/node_modules
+**/dist
+**/package-lock.json
+**/.eslintrc.js
+**/build
+**/service-worker.ts

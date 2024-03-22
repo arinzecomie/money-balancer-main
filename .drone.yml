@@ -1,0 +1,20 @@
+kind: pipeline
+type: docker
+name: default
+
+trigger:
+  event:
+  - tag
+
+steps:
+  - name: publish
+    image: plugins/docker
+    settings:
+      registry: itsblue.dev
+      repo: itsblue.dev/dorian/money-balancer
+      auto_tag: true
+      dockerfile: Dockerfile
+      username:
+        from_secret: gitea-user
+      password:
+        from_secret: gitea-token
